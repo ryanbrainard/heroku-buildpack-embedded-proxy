@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=${1}
+CACHE_DIR=${2}
+EMBEDDED_BP_DIR=${BUILD_DIR}/.buildpack
+
+exec ${EMBEDDED_BP_DIR}/compile ${BUILD_DIR} ${CACHE_DIR}

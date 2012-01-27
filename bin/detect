@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=${1}
+EMBEDDED_BP_DIR=${BUILD_DIR}/.buildpack
+
+if [ -x ${EMBEDDED_BP_DIR}/detect ] && [ -x ${EMBEDDED_BP_DIR}/compile ] && [ -x ${EMBEDDED_BP_DIR}/release ]; then
+   exec ${EMBEDDED_BP_DIR}/detect ${BUILD_DIR}
+fi
+
+echo "no" && exit 1
