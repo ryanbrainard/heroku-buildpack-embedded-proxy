@@ -3,4 +3,4 @@
 BUILD_DIR=${1}
 EMBEDDED_BP_DIR=${BUILD_DIR}/.buildpack
 
-exec ${EMBEDDED_BP_DIR}/release ${BUILD_DIR}
+exec ${EMBEDDED_BP_DIR}/bin/release ${BUILD_DIR}

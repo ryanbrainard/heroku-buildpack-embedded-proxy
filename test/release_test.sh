@@ -4,11 +4,11 @@
 
 testCompile()
 {
-  mkdir ${BUILD_DIR}/.buildpack
-  cat > ${BUILD_DIR}/.buildpack/release <<EOF
+  mkdir -p ${BUILD_DIR}/.buildpack/bin
+  cat > ${BUILD_DIR}/.buildpack/bin/release <<EOF
 echo "Released"
 EOF
-  chmod +x ${BUILD_DIR}/.buildpack/release
+  chmod +x ${BUILD_DIR}/.buildpack/bin/release
   
   release
 

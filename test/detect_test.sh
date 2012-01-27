@@ -11,10 +11,10 @@ testNoDetect()
 
 testDetect_FilesExistButNotExecutable()
 {
-  mkdir ${BUILD_DIR}/.buildpack
-  touch ${BUILD_DIR}/.buildpack/detect
-  touch ${BUILD_DIR}/.buildpack/compile
-  touch ${BUILD_DIR}/.buildpack/release
+  mkdir -p ${BUILD_DIR}/.buildpack/bin
+  touch ${BUILD_DIR}/.buildpack/bin/detect
+  touch ${BUILD_DIR}/.buildpack/bin/compile
+  touch ${BUILD_DIR}/.buildpack/bin/release
 
   detect
 
@@ -23,13 +23,13 @@ testDetect_FilesExistButNotExecutable()
 
 testDetect_ExecutableFilesExistButEmpty()
 {
-  mkdir ${BUILD_DIR}/.buildpack
-  touch ${BUILD_DIR}/.buildpack/detect
-  touch ${BUILD_DIR}/.buildpack/compile
-  touch ${BUILD_DIR}/.buildpack/release
-  chmod +x ${BUILD_DIR}/.buildpack/detect
-  chmod +x ${BUILD_DIR}/.buildpack/compile
-  chmod +x ${BUILD_DIR}/.buildpack/release
+  mkdir -p ${BUILD_DIR}/.buildpack/bin
+  touch ${BUILD_DIR}/.buildpack/bin/detect
+  touch ${BUILD_DIR}/.buildpack/bin/compile
+  touch ${BUILD_DIR}/.buildpack/bin/release
+  chmod +x ${BUILD_DIR}/.buildpack/bin/detect
+  chmod +x ${BUILD_DIR}/.buildpack/bin/compile
+  chmod +x ${BUILD_DIR}/.buildpack/bin/release
   
   detect
 
@@ -38,15 +38,15 @@ testDetect_ExecutableFilesExistButEmpty()
 
 testDetect_ExecutableFilesExist()
 {
-  mkdir ${BUILD_DIR}/.buildpack
-  cat > ${BUILD_DIR}/.buildpack/detect <<EOF
+  mkdir -p ${BUILD_DIR}/.buildpack/bin
+  cat > ${BUILD_DIR}/.buildpack/bin/detect <<EOF
 echo "Detected" && exit 0
 EOF
-  touch ${BUILD_DIR}/.buildpack/compile
-  touch ${BUILD_DIR}/.buildpack/release
-  chmod +x ${BUILD_DIR}/.buildpack/detect
-  chmod +x ${BUILD_DIR}/.buildpack/compile
-  chmod +x ${BUILD_DIR}/.buildpack/release
+  touch ${BUILD_DIR}/.buildpack/bin/compile
+  touch ${BUILD_DIR}/.buildpack/bin/release
+  chmod +x ${BUILD_DIR}/.buildpack/bin/detect
+  chmod +x ${BUILD_DIR}/.buildpack/bin/compile
+  chmod +x ${BUILD_DIR}/.buildpack/bin/release
   
   detect
 

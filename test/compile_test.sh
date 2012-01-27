@@ -4,11 +4,11 @@
 
 testCompile()
 {
-  mkdir ${BUILD_DIR}/.buildpack
-  cat > ${BUILD_DIR}/.buildpack/compile <<EOF
+  mkdir -p ${BUILD_DIR}/.buildpack/bin
+  cat > ${BUILD_DIR}/.buildpack/bin/compile <<EOF
 echo "Compiled"
 EOF
-  chmod +x ${BUILD_DIR}/.buildpack/compile
+  chmod +x ${BUILD_DIR}/.buildpack/bin/compile
   
   compile
 
